@@ -104,3 +104,8 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['nome']))
     return redirect(url_for('index'))
+
+
+@app.route('/relatorio')
+def relatorio():
+  return render_template('relatorio.html')
