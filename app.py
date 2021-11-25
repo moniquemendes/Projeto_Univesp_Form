@@ -1,4 +1,5 @@
 import sqlite3
+from sqlite3.dbapi2 import Error
 from flask import Flask, render_template, request, url_for, flash, redirect
 import os
 import datetime
@@ -63,6 +64,8 @@ def create():
                          (nome, email, idade, tipo, opcao, valida, fraude, descricao))
             conn.commit()
             conn.close()
+            if nome:
+                 flash('Muito obrigada por preencher o formulário. Concerteza você estará ajudando alguma pessoa em algum lugar do Brasil!')
             return redirect(url_for('index'))
     return render_template('create.html')
 
