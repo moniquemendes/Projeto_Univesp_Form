@@ -65,7 +65,7 @@ def create():
             conn.commit()
             conn.close()
             if nome:
-                 flash('Muito obrigada por preencher o formulário. Concerteza você estará ajudando alguma pessoa em algum lugar do Brasil!')
+                flash('Muito obrigada por preencher o formulário. Com certeza você estará ajudando alguma pessoa em algum lugar do Brasil!')
             return redirect(url_for('index'))
     return render_template('create.html')
 
